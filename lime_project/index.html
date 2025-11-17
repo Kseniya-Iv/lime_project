@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIME | Умный подбор одежды</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <img src="lime_logo.PNG" alt="LIME" class="logo-image">
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="calculator-section">
+                <h2>Умный подбор одежды</h2>
+                <p class="section-description">Определите ваш тип фигуры и получите персонализированные рекомендации</p>
+                
+                <div class="input-group">
+                    <label>Обхват груди (см)</label>
+                    <input type="number" id="bust" placeholder="Например: 90">
+                </div>
+                <div class="input-group">
+                    <label>Обхват талии (см)</label>
+                    <input type="number" id="waist" placeholder="Например: 60">
+                </div>
+                <div class="input-group">
+                    <label>Обхват бедер (см)</label>
+                    <input type="number" id="hips" placeholder="Например: 90">
+                </div>
+                
+                <button id="calculateBtn" onclick="calculateBodyType()">Определить тип фигуры</button>
+            </div>
+
+            <div class="info-section">
+                <h3>Как это работает?</h3>
+                <div class="info-content">
+                    <p>Система анализирует ваши параметры и определяет один из 5 основных типов фигуры:</p>
+                    
+                    <div class="body-type-list">
+                        <div class="body-type-item">
+                            <strong>Песочные часы</strong>
+                            <span>Плечи и бедра равны, ярко выраженная талия</span>
+                        </div>
+                        <div class="body-type-item">
+                            <strong>Прямоугольник</strong>
+                            <span>Плечи, талия и бедра примерно равны</span>
+                        </div>
+                        <div class="body-type-item">
+                            <strong>Груша</strong>
+                            <span>Бедра шире плеч, выраженная талия</span>
+                        </div>
+                        <div class="body-type-item">
+                            <strong>Перевернутый треугольник</strong>
+                            <span>Плечи шире бедер, талия слабо выражена</span>
+                        </div>
+                        <div class="body-type-item">
+                            <strong>Яблоко</strong>
+                            <span>Талия шире или равна бедрам</span>
+                        </div>
+                    </div>
+                    
+                    <p class="tip">Для точного результата измеряйте себя в нижнем белье с помощью сантиметровой ленты</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="resultSection" class="result-section hidden">
+            <div class="body-type-card">
+                <h3>Ваш тип фигуры: <span id="bodyTypeName"></span></h3>
+                <p id="bodyTypeDescription"></p>
+                <div class="recommendations">
+                    <h4>Рекомендуем для вас:</h4>
+                    <div id="clothingItems" class="clothing-grid"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="productsSection" class="products-section hidden">
+            <div class="products-header">
+                <h3>ПОДОБРАННЫЕ ДЛЯ ВАС ТОВАРЫ</h3>
+                <p id="productsCount" class="products-count"></p>
+            </div>
+            <div id="productsGrid" class="products-grid"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
